@@ -25,6 +25,10 @@ export default {
 				},
 			},
 		},
+		fontFamily: {
+			sans: ["Outfit", "sans-serif"],
+			mono: ["Jetbrains Mono", "monospace"],
+		},
 	},
 	plugins: [],
 };

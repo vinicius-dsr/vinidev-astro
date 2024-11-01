@@ -7,13 +7,19 @@ import Header from "../components/Header.astro";
 <html lang="pt-br">
   <head>
     <meta charset="utf-8" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
+    <link
+      href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&family=Outfit:wght@100..900&display=swap"
+      rel="stylesheet"
+    />
     <title>{title}</title>
   </head>
   <body
-    class="bg-background-light dark:bg-background-dark text-text-light dark:text-text-dark heme-transition gradient-transition"
+    class="bg-background-light dark:bg-background-dark text-text-light dark:text-text-dark heme-transition gradient-transition antialiased"
   >
     <Header />
     <slot />

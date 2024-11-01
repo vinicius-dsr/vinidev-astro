@@ -1,0 +1,24 @@
+---
+import type { HTMLAttributes } from "astro/types";
+import { twMerge } from "tailwind-merge";
+
+interface Props extends HTMLAttributes<"a"> {
+  variant: "primary" | "secondary";
+}
+
+const { variant, ...props } = Astro.props;
+---
+
+<a
+  class={twMerge(
+    "px-4 py-2 flex items-center gap-2",
+    variant === "primary" &&
+      "bg-background-dark dark:bg-background-light rounded-xl dark:text-black text-white hover:bg-background-dark/80 transition-colors hover:dark:bg-background-light/80",
+    variant === "secondary" &&
+      "text-black bg-background-light dark:bg-background-dark dark:text-white rounded-xl hover:bg-background-dark/30 hover:dark:bg-background-light/30 transition-colors",
+    Astro.props.class,
+  )}
+  {...props}
+>
+  <slot />
+</a>
