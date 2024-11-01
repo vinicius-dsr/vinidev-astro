@@ -1,4 +1,6 @@
 ---
+import { ArrowRight } from "lucide-react";
+import { FaWhatsapp } from "react-icons/fa";
 import Button from "./ui/Button.astro";
 ---
 
@@ -14,8 +16,10 @@ import Button from "./ui/Button.astro";
     </p>
 
     <div class="flex items-center gap-4">
-      <Button href="" variant="primary"> Solicitar orçamento </Button>
-      <Button href="" variant="secondary"> Fale comigo </Button>
+      <Button href="" variant="primary">
+        Solicitar orçamento <ArrowRight size={17} /></Button
+      >
+      <Button href="" variant="secondary"> Fale comigo <FaWhatsapp /></Button>
     </div>
   </div>
 </section>
