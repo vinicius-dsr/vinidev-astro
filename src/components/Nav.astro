@@ -1,0 +1,52 @@
+---
+const navLink = [
+  { href: "#sobre", name: "Sobre" },
+  { href: "#servicos", name: "Serviços" },
+  { href: "#projetos", name: "Projetos" },
+  { href: "#contato", name: "Contato" },
+];
+---
+
+<nav class="flex gap-4 items-center">
+  {
+    navLink.map((link) => (
+      <a
+        href={link.href}
+        class="text-sm hover:text-primary transition-colors duration-200"
+        data-link
+      >
+        {link.name}
+      </a>
+    ))
+  }
+</nav>
+
+<script>
+  const navLinks = document.querySelectorAll("[data-link]");
+
+  function setActiveLink() {
+    let current = "";
+    navLinks.forEach((link) => {
+      const href = link.getAttribute("href");
+      if (href) {
+        const section = document.querySelector(href);
+        if (section instanceof HTMLElement) {
+          const sectionTop = section.offsetTop - 100;
+          if (window.scrollY >= sectionTop) {
+            current = href;
+          }
+        }
+      }
+    });
+
+    navLinks.forEach((link) => {
+      const href = link.getAttribute("href");
+      if (href) {
+        link.classList.toggle("text-primary", href === current);
+        link.classList.toggle("font-semibold", href === current); // Opcional: destaque extra
+      }
+    });
+  }
+
+  window.addEventListener("scroll", setActiveLink);
+</script>
