@@ -1,7 +1,7 @@
 ---
 const { title } = Astro.props;
 import "../styles/global.css";
-import ThemeToggle from "../components/ThemeToggle.astro";
+import Header from "../components/Header.astro";
 ---
 
 <html lang="pt-br">
@@ -13,9 +13,9 @@ import ThemeToggle from "../components/ThemeToggle.astro";
     <title>{title}</title>
   </head>
   <body
-    class="bg-background-light dark:bg-background-dark text-text-light dark:text-text-dark"
+    class="bg-background-light dark:bg-background-dark text-text-light dark:text-text-dark heme-transition gradient-transition"
   >
-    <ThemeToggle />
+    <Header />
     <slot />
   </body>
 </html>
