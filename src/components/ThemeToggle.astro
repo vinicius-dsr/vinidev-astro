@@ -5,7 +5,7 @@ import SunIcon from "./SunIcon.astro";
 
 <button
   id="theme-toggle"
-  class="p-2 bg-primary-light dark:bg-primary-dark text-text-dark dark:text-text-light rounded-full"
+  class="p-2 text-text-light dark:text-text-dark rounded-full"
 >
   <span id="theme-icon">
     <SunIcon id="sun-icon" class="hidden" />
@@ -32,7 +32,6 @@ import SunIcon from "./SunIcon.astro";
     }
   }
 
-  // Inicialização do tema
   function initTheme() {
     const htmlElement = document.documentElement;
     const savedTheme = localStorage.getItem("theme");
@@ -53,11 +52,9 @@ import SunIcon from "./SunIcon.astro";
     }
   }
 
-  // Adiciona evento de clique
   document
     .getElementById("theme-toggle")
     ?.addEventListener("click", toggleTheme);
 
-  // Inicializa o tema quando o script carrega
   initTheme();
 </script>
