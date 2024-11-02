@@ -1,0 +1,17 @@
+---
+import { links } from "../config/socialLinks";
+---
+
+<div class="flex items-center gap-4 px-2">
+  {
+    links.map((link) => (
+      <a
+        href={link.href}
+        target="_blank"
+        class="hover:text-primary transition-colors"
+      >
+        <link.icon />
+      </a>
+    ))
+  }
+</div>
