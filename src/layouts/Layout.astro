@@ -19,8 +19,12 @@ import Header from "../components/Header.astro";
     <title>{title}</title>
   </head>
   <body
-    class="bg-background-light dark:bg-background-dark text-text-light dark:text-text-dark heme-transition gradient-transition antialiased"
+    class="bg-background-light dark:bg-background-dark text-text-light dark:text-text-dark antialiased scroll-smooth"
   >
+    <div
+      class="absolute top-0 z-[-2] h-screen w-screen bg-background-light dark:bg-background-dark bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(120,119,198,0.3),rgba(255,255,255,0))]"
+    >
+    </div>
     <Header />
     <slot />
   </body>
