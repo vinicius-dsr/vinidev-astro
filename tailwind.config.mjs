@@ -5,15 +5,26 @@ export default {
 	theme: {
 		extend: {
 			colors: {
+				// primary: {
+				// 	light: "#679FB4", // Secondary color for light mode
+				// 	DEFAULT: "#004F6D", // Primary color
+				// 	dark: "#004F6D", // Same primary color for dark mode
+				// },
+				// secondary: {
+				// 	light: "#004F6D", // Primary color for light mode
+				// 	DEFAULT: "#679FB4", // Secondary color
+				// 	dark: "#679FB4", // Same secondary color for dark mode
+				// },
+
 				primary: {
-					light: "#679FB4", // Secondary color for light mode
-					DEFAULT: "#004F6D", // Primary color
-					dark: "#004F6D", // Same primary color for dark mode
+					light: "#60A5FA", // Azul claro para light mode
+					DEFAULT: "#3B82F6", // Azul forte
+					dark: "#3B82F6", // Mesmo azul forte para dark mode
 				},
 				secondary: {
-					light: "#004F6D", // Primary color for light mode
-					DEFAULT: "#679FB4", // Secondary color
-					dark: "#679FB4", // Same secondary color for dark mode
+					light: "#F3F4F6", // Cinza claro para light mode
+					DEFAULT: "#E5E7EB", // Cinza intermediário
+					dark: "#E5E7EB", // Mesmo cinza intermediário para dark mode
 				},
 				background: {
 					light: "#FFFFFF", // White background for light mode

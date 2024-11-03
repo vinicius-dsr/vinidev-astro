@@ -1,42 +1,50 @@
 ---
 import { Tab, TabItem } from "free-astro-components";
+import { skills } from "../config/skills";
 ---
 
 <section class="max-w-screen-xl mx-auto pb-10 h-[80vh]" id="sobre">
   <div class="flex gap-8">
     <div class="min-w-[30vw]">
-      <div class="">
+      <div class="rounde-md">
         <img
           src="https://github.com/vinicius-dsr.png"
           alt="Foto de Vinícius Reis, Desenvolvedor Front-end"
-          class=""
+          class="objecct-cover w-full h-full rounded-md"
         />
       </div>
     </div>
     <div class="w-full">
       <Tab
-        class=""
         tabs={[
           { label: "Sobre mim", active: true },
           { label: "Minhas habilidades" },
         ]}
+        ><TabItem active
+          ><h2 class="text-2xl font-medium mb-4">
+            Desenvolvedor Front-end e apaixonado por tecnologia
+          </h2><p class="text-lg">
+            Com vasto conhecimento em desenvolvimento e UI/UX design, tenho me
+            dedicado em desenvovimento web em geral, como Landing Pages,
+            E-commerces, Blogs, Dashboard etc. Atualmente minha especialidade é
+            desenvolvimento Front-end. Resido em Paragominas/PA, onde atuo como
+            freelancer.
+          </p></TabItem
+        ><TabItem
+          ><h2 class="mb-4 text-2xl font-medium">
+            Especializado nas principais tecnologias disponíveis no mercado.
+          </h2>
+          <div class="flex flex-wrap items-center gap-4">
+            {
+              skills.map((skill) => (
+                <div class="border rounded-xl p-4">
+                  <skill.icon size={32} />
+                </div>
+              ))
+            }
+          </div>
+        </TabItem></Tab
       >
-        <TabItem class="" active>
-          <TabItem class="flex flex-col gap-4">
-            <h2 class="text-2xl font-medium">
-              Desenvolvedor Front-end e apaixonado por tecnologia
-            </h2>
-            <p class="">
-              Com vasto conhecimento em desenvolvimento e UI/UX design, tenho me
-              dedicado em desenvovimento web em geral, como Landing Pages,
-              E-commerces, Blogs, Dashboard etc. Atualmente minha especialidade
-              é desenvolvimento Front-end. Resido em Paragominas/PA, onde atuo
-              como freelancer.
-            </p>
-          </TabItem>
-        </TabItem>
-        <TabItem>bbbbbbbb</TabItem>
-      </Tab>
     </div>
   </div>
 </section>

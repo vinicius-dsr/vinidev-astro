@@ -8,12 +8,12 @@ html {
 
 .light,
 [data-theme="light"] {
-	--ac-primary: 33, 33, 33;
-	--ac-secondary: 33, 33, 33;
+	--ac-primary: 96, 165, 250;
+	--ac-secondary: 243, 244, 246;
 }
 
 .dark,
 [data-theme="dark"] {
-	--ac-primary: 255, 255, 255;
-	--ac-secondary: 255, 255, 255;
+	--ac-primary: 59, 130, 246;
+	--ac-secondary: 229, 231, 235;
 }
