@@ -1,3 +1,19 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+html {
+	scroll-behavior: smooth;
+}
+
+.light,
+[data-theme="light"] {
+	--ac-primary: 33, 33, 33;
+	--ac-secondary: 33, 33, 33;
+}
+
+.dark,
+[data-theme="dark"] {
+	--ac-primary: 255, 255, 255;
+	--ac-secondary: 255, 255, 255;
+}
