@@ -3,8 +3,11 @@ import { Accordion, AccordionItem } from "free-astro-components";
 import { services } from "../data/services.ts";
 ---
 
-<section id="servicos" class="max-w-screen-lg mx-auto py-20 min-h-[90vh]">
-  <div class="flex gap-20">
+<section
+  id="servicos"
+  class="max-w-screen-lg mx-auto py-20 min-h-[90vh] mx:px-0 px-4"
+>
+  <div class="flex gap-20 md:flex-row flex-col-reverse">
     <div class="w-full">
       <Accordion>
         {

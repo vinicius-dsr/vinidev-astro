@@ -4,18 +4,20 @@ import { FaWhatsapp } from "react-icons/fa";
 import Button from "./ui/Button.astro";
 ---
 
-<section class="max-w-screen-xl mx-auto py-20 mt-20 h-[80vh]">
+<section
+  class="max-w-screen-xl mx-auto md:py-20 py-10 mt-20 mb-20 md:h-[80vh] md:px-0 px-4"
+>
   <div class="flex flex-col gap-8 items-center">
-    <h1 class="text-5xl font-medium text-center">
+    <h1 class="md:text-5xl text-2xl font-medium text-center">
       Desenvolvedor Front-end <br />& Freelancer
     </h1>
-    <p class="text-xl text-center max-w-screen-md">
+    <p class="md:text-xl text-lg text-center max-w-screen-md">
       Do conceito inicial à implementação final, dou forma às suas ideias. Que
       tal trabalharmos juntos para desenvolvermos um projeto que vai se destacar
       na internet?
     </p>
 
-    <div class="flex items-center gap-4">
+    <div class="flex items-center gap-4 md:flex-row flex-col">
       <Button href="" variant="primary">
         Solicitar orçamento <ArrowRight size={17} /></Button
       >
