@@ -1,11 +1,12 @@
 ---
 import { Tab, TabItem } from "free-astro-components";
-import { skills } from "../config/skills";
+import { skills } from "../data/skills";
 ---
 
-<section class="max-w-screen-xl mx-auto pb-10 h-[80vh]" id="sobre">
-  <div class="flex gap-8">
-    <div class="min-w-[30vw]">
+<section class="max-w-screen-lg mx-auto py-20 min-h-[90vh]" id="sobre">
+  <div class="flex gap-10">
+    <!-- Foto  -->
+    <div class="min-w-[25vw]">
       <div class="rounde-md">
         <img
           src="https://github.com/vinicius-dsr.png"
@@ -14,6 +15,8 @@ import { skills } from "../config/skills";
         />
       </div>
     </div>
+
+    <!-- Tabs sobre mim -->
     <div class="w-full">
       <Tab
         tabs={[

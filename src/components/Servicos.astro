@@ -1,0 +1,29 @@
+---
+import { Accordion, AccordionItem } from "free-astro-components";
+import { services } from "../data/services.ts";
+---
+
+<section id="servicos" class="max-w-screen-lg mx-auto py-20 min-h-[90vh]">
+  <div class="flex gap-20">
+    <div class="w-full">
+      <Accordion>
+        {
+          services.map((service) => (
+            <AccordionItem title={service.title}>
+              <p>{service.description}</p>
+            </AccordionItem>
+          ))
+        }
+      </Accordion>
+    </div>
+    <div class="flex flex-col gap-4">
+      <span
+        class="text-xl font-semibold uppercase dark:text-primary-dark/60 text-primary-light/80"
+        >O que eu faço</span
+      >
+      <h2 class="text-5xl">
+        Formas de como eu posso ajudar você ou sua empresa
+      </h2>
+    </div>
+  </div>
+</section>
