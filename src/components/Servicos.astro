@@ -1,11 +1,11 @@
 ---
+import { services } from "@/data/services.ts";
 import { Accordion, AccordionItem } from "free-astro-components";
-import { services } from "../data/services.ts";
 ---
 
 <section
   id="servicos"
-  class="max-w-screen-lg mx-auto py-20 md:mt-10 md:min-h-[90vh] mx:px-0 px-4"
+  class="max-w-screen-lg mx-auto md:py-24 py-10 md:mt-10 md:mb-10 mx:px-0 px-4"
 >
   <div class="flex md:gap-20 gap-10 md:flex-row flex-col-reverse">
     <div class="w-full">
@@ -21,7 +21,7 @@ import { services } from "../data/services.ts";
     </div>
     <div class="flex flex-col gap-4">
       <span
-        class="md:text-xl text-base font-semibold uppercase dark:text-primary-dark/60 text-primary-light/80"
+        class="md:text-xl text-base font-semibold uppercase dark:text-primary-dark text-primary-light"
         >O que eu faço</span
       >
       <h2 class="md:text-5xl text-3xl">
