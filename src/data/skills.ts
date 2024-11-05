@@ -10,6 +10,7 @@ import {
 	FaWordpress,
 } from "react-icons/fa";
 import {
+	SiAstro,
 	SiFigma,
 	SiNextdotjs,
 	SiPrisma,
@@ -32,7 +33,11 @@ export const skills = [
 	},
 	{
 		icon: SiTypescript,
-		name: "Type",
+		name: "TypeScript",
+	},
+	{
+		icon: SiAstro,
+		name: "Astro",
 	},
 	{
 		icon: FaReact,

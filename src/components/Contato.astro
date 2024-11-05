@@ -1,0 +1,53 @@
+---
+import { links } from "@/data/socialLinks";
+import { ArrowRightIcon } from "lucide-react";
+import Button from "./ui/Button.astro";
+---
+
+<section
+  id="contato"
+  class="max-w-screen-lg mx-auto md:px-0 px-4 py-10 md:py-20 min-h-[90vh]"
+>
+  <div
+    class="border px-5 py-10 rounded-md dark:border-gray-700/60 border-gray-400/70"
+  >
+    <div class="flex flex-col gap-4">
+      <div class="flex flex-col gap-4 items-center text-center">
+        <span
+          class="md:text-xl text-base font-semibold uppercase dark:text-primary-dark text-primary-light"
+          >Gostou do que viu?</span
+        >
+        <h2 class="md:text-5xl text-3xl">
+          Então vamos construir algo incrível juntos !
+        </h2>
+        <Button variant="primary" href="" class="mt-4"
+          >Solicar Orçamento <ArrowRightIcon size={18} /></Button
+        >
+      </div>
+      <hr class="dark:border-gray-700/60 border-gray-400/70 mt-7 mb-5" />
+      <div
+        class="flex md:flex-row items-center md:justify-between flex-col gap-4"
+      >
+        <span class="flex items-center gap-4"
+          >Me siga nas redes sociais <ArrowRightIcon
+            size={18}
+            className="md:block hidden"
+          /></span
+        >
+        <div class="flex items-center gap-4">
+          {
+            links.map((link) => (
+              <a
+                href={link.href}
+                target="_blank"
+                class="hover:text-primary transition-colors"
+              >
+                <link.icon />
+              </a>
+            ))
+          }
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

@@ -7,9 +7,9 @@ const script = `
 document.addEventListener('scroll', () => {
   const header = document.querySelector('header');
   if (window.scrollY > 0) {
-    header.classList.add('bg-background-light/60', 'dark:bg-background-dark/60', 'backdrop-blur-md');
+    header.classList.add('bg-background-light/70', 'dark:bg-background-dark/70', 'backdrop-blur-md', 'border-b' ,'dark:border-gray-700/60', 'border-gray-400/70');
   } else {
-    header.classList.remove('bg-background-light/60', 'dark:bg-background-dark/60', 'backdrop-blur-md' );
+    header.classList.remove('bg-background-light/70', 'dark:bg-background-dark/70', 'backdrop-blur-md', 'border-b', 'dark:border-gray-700/60', 'border-gray-400/70' );
   }
 });
 `;
