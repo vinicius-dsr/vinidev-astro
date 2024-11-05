@@ -1,5 +1,6 @@
 ---
 import Hero from "@/components/Hero.astro";
+import { ListaDeProjetos } from "@/components/ListaDeProjetos";
 import Servicos from "@/components/Servicos.astro";
 import Sobre from "@/components/Sobre.astro";
 import Layout from "@/layouts/Layout.astro";
@@ -9,4 +10,17 @@ import Layout from "@/layouts/Layout.astro";
 	<Hero />
 	<Sobre />
 	<Servicos />
+	<section
+		id="projetos"
+		class="max-w-screen-lg mx-auto md:py-24 py-10 md:mt-10 md:mb-10 mx:px-0 px-4"
+	>
+		<div class="flex flex-col gap-4 mb-4">
+			<span
+				class="md:text-xl text-base font-semibold uppercase dark:text-primary-dark text-primary-light"
+				>Meus projetos</span
+			>
+			<h2 class="md:text-5xl text-3xl">Conheça um pouco do meu trabalho</h2>
+		</div>
+		<ListaDeProjetos client:load />
+	</section>
 </Layout>
