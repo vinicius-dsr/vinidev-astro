@@ -31,7 +31,7 @@ const navLink = [
       if (href) {
         const section = document.querySelector(href);
         if (section instanceof HTMLElement) {
-          const sectionTop = section.offsetTop - 100;
+          const sectionTop = section.offsetTop - 200;
           if (window.scrollY >= sectionTop) {
             current = href;
           }
