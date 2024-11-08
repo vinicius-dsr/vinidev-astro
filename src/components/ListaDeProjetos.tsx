@@ -64,7 +64,7 @@ export function ListaDeProjetos() {
 				<CarouselContent>
 					{projectList.map((project) => (
 						<CarouselItem key={project.name}>
-							<div className="flex flex-col gap-2">
+							<a href={project.slug} className="flex flex-col gap-2">
 								<div className="relative aspect-video w-full overflow-hidden rounded-md">
 									<img
 										src={project.imageURL}
@@ -83,7 +83,7 @@ export function ListaDeProjetos() {
 										{project.date}
 									</span>
 								</div>
-							</div>
+							</a>
 						</CarouselItem>
 					))}
 				</CarouselContent>

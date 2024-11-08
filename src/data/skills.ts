@@ -2,6 +2,7 @@ import {
 	FaBootstrap,
 	FaCss3,
 	FaDatabase,
+	FaElementor,
 	FaHtml5,
 	FaJs,
 	FaPhp,
@@ -12,6 +13,7 @@ import {
 import {
 	SiAstro,
 	SiFigma,
+	SiFramer,
 	SiNextdotjs,
 	SiPrisma,
 	SiTailwindcss,
@@ -66,6 +68,14 @@ export const skills = [
 	{
 		icon: FaWordpress,
 		name: "Wordpress",
+	},
+	{
+		icon: FaElementor,
+		name: "Elementor",
+	},
+	{
+		icon: SiFramer,
+		name: "Framer",
 	},
 	{
 		icon: SiPrisma,
