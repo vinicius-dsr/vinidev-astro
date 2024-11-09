@@ -1,14 +1,13 @@
+import react from "@astrojs/react";
+import starlight from "@astrojs/starlight";
+import tailwind from "@astrojs/tailwind";
+import vercel from "@astrojs/vercel/serverless";
 // @ts-check
 import { defineConfig } from "astro/config";
-
-import tailwind from "@astrojs/tailwind";
-
-import react from "@astrojs/react";
-
-import starlight from "@astrojs/starlight";
-
 // https://astro.build/config
 export default defineConfig({
+	output: "server",
+	adapters: [vercel()],
 	integrations: [
 		tailwind(),
 		react(),

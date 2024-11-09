@@ -2,6 +2,7 @@
 import { links } from "@/data/socialLinks";
 import { ArrowRightIcon } from "lucide-react";
 import Button from "./ui/Button.astro";
+const zap = "https://wa.me/5591992761377";
 ---
 
 <section
@@ -20,7 +21,7 @@ import Button from "./ui/Button.astro";
         <h2 class="md:text-5xl text-3xl">
           Então vamos construir algo incrível juntos !
         </h2>
-        <Button variant="primary" href="" class="mt-4"
+        <Button variant="primary" href={zap} target="_blank" class="mt-4"
           >Solicar orçamento <ArrowRightIcon size={18} /></Button
         >
       </div>

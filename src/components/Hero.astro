@@ -2,6 +2,7 @@
 import Button from "@/components/ui/Button.astro";
 import { ArrowRight } from "lucide-react";
 import { FaWhatsapp } from "react-icons/fa";
+const zap = "https://wa.me/5591992761377";
 ---
 
 <section
@@ -18,10 +19,12 @@ import { FaWhatsapp } from "react-icons/fa";
     </p>
 
     <div class="flex items-center gap-4 md:flex-row mt-4 flex-col">
-      <Button href="" variant="primary">
+      <Button href={zap} target="_blank" variant="primary">
         Solicitar orçamento <ArrowRight size={17} /></Button
       >
-      <Button href="" variant="secondary"> Fale comigo <FaWhatsapp /></Button>
+      <Button href={zap} target="_blank" variant="secondary">
+        Fale comigo <FaWhatsapp /></Button
+      >
     </div>
   </div>
 </section>

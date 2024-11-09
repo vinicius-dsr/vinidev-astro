@@ -22,7 +22,7 @@ import Layout from "@/layouts/Layout.astro";
 			>
 			<h2 class="md:text-5xl text-3xl">Conheça um pouco do meu trabalho</h2>
 		</div>
-		<ListaDeProjetos client:load />
+		<ListaDeProjetos client:only="react" />
 	</section>
 	<Contato />
 </Layout>
