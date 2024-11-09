@@ -22,13 +22,13 @@ import SunIcon from "@/components/SunIcon.astro";
     if (htmlElement.classList.contains("dark")) {
       htmlElement.classList.remove("dark");
       localStorage.setItem("theme", "light");
-      sunIcon.classList.remove("hidden");
-      moonIcon.classList.add("hidden");
+      sunIcon?.classList.remove("hidden");
+      moonIcon?.classList.add("hidden");
     } else {
       htmlElement.classList.add("dark");
       localStorage.setItem("theme", "dark");
-      sunIcon.classList.add("hidden");
-      moonIcon.classList.remove("hidden");
+      sunIcon?.classList.add("hidden");
+      moonIcon?.classList.remove("hidden");
     }
   }
 
@@ -43,12 +43,12 @@ import SunIcon from "@/components/SunIcon.astro";
       (!savedTheme && window.matchMedia("(prefers-color-scheme: dark)").matches)
     ) {
       htmlElement.classList.add("dark");
-      sunIcon.classList.add("hidden");
-      moonIcon.classList.remove("hidden");
+      sunIcon?.classList.add("hidden");
+      moonIcon?.classList.remove("hidden");
     } else {
       htmlElement.classList.remove("dark");
-      sunIcon.classList.remove("hidden");
-      moonIcon.classList.add("hidden");
+      sunIcon?.classList.remove("hidden");
+      moonIcon?.classList.add("hidden");
     }
   }
 
