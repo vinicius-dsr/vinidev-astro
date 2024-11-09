@@ -7,7 +7,8 @@ import { defineConfig } from "astro/config";
 // https://astro.build/config
 export default defineConfig({
 	output: "hybrid",
-	adapters: [vercel()],
+	adapter: vercel(),
+
 	integrations: [
 		tailwind(),
 		react(),
@@ -16,6 +17,7 @@ export default defineConfig({
 			plugins: [],
 		}),
 	],
+
 	image: {
 		domains: ["utfs.io"],
 	},
