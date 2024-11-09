@@ -2,7 +2,6 @@
 import Button from "@/components/ui/Button.astro";
 import Layout from "@/layouts/Layout.astro";
 import "@/styles/global.css";
-import { Image } from "astro:assets";
 import { FaGithub, FaInstagram, FaLinkedin } from "react-icons/fa";
 import { VscGlobe } from "react-icons/vsc";
 
@@ -35,7 +34,7 @@ const links = [
     class="flex flex-col gap-4 py-20 min-h-[80vh] max-w-screen-lg mx-auto items-center md:px-0 px-4"
   >
     <div class="flex flex-col gap-4 items-center">
-      <Image
+      <img
         src="https://github.com/vinicius-dsr.png"
         alt="Vinícius Reis"
         width={100}
