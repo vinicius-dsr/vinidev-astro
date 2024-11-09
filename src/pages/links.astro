@@ -1,0 +1,63 @@
+---
+import Button from "@/components/ui/Button.astro";
+import Layout from "@/layouts/Layout.astro";
+import "@/styles/global.css";
+import { Image } from "astro:assets";
+import { FaGithub, FaInstagram, FaLinkedin } from "react-icons/fa";
+import { VscGlobe } from "react-icons/vsc";
+
+const links = [
+  {
+    icon: VscGlobe,
+    name: "Meu Site",
+    href: "https://vinidev.tech",
+  },
+  {
+    icon: FaGithub,
+    name: "Github",
+    href: "https://github.com/vinicius-dsr",
+  },
+  {
+    icon: FaLinkedin,
+    name: "Linkedin",
+    href: "https://www.linkedin.com/in/viniciusreis-pgm/",
+  },
+  {
+    icon: FaInstagram,
+    name: "Instagram",
+    href: "https://www.instagram.com/vinicius_dev/",
+  },
+];
+---
+
+<Layout title="Vinícius Reis | Links">
+  <main
+    class="flex flex-col gap-4 py-20 min-h-[80vh] max-w-screen-lg mx-auto items-center md:px-0 px-4"
+  >
+    <div class="flex flex-col gap-4 items-center">
+      <Image
+        src="https://github.com/vinicius-dsr.png"
+        alt="Vinícius Reis"
+        width={100}
+        height={100}
+        class="rounded-full"
+      />
+      <div class="flex flex-col items-center">
+        <h2 class="text-lg">Vinícius Reis</h2>
+        <span class="text-base">Desenvolvedor Front-end</span>
+      </div>
+    </div>
+    <div class="flex flex-col gap-2 w-full py-5">
+      {
+        links.map((link) => (
+          <Button variant="primary" href={link.href} class="w-full text-center">
+            <link.icon />{" "}
+            <span class="-ml-8 w-[90vw] text-center font-medium md:-ml-[116px]">
+              {link.name}
+            </span>
+          </Button>
+        ))
+      }
+    </div>
+  </main>
+</Layout>
