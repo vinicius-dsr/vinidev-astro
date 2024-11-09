@@ -2,43 +2,48 @@
 import Button from "@/components/ui/Button.astro";
 import Layout from "@/layouts/Layout.astro";
 
-const pages = [
-  {
-    slug: undefined,
-    title: "Astro Store",
-    text: "Welcome to the Astro store!",
-  },
-  {
-    slug: "dieta-ai",
-    title: "Dieta AI",
-    text: "Em Breve",
-  },
-  {
-    slug: "agenda-paragominas",
-    title: "Agenda Paragominas",
-    text: "Em Breve",
-  },
-  {
-    slug: "blog-mdx",
-    title: "Blog MDX",
-    text: "Em Breve",
-  },
-  {
-    slug: "sunclean-energia-solar",
-    title: "Sunclean Energia Solar",
-    text: "Em Breve",
-  },
-  {
-    slug: "cardapio-digital",
-    title: "Cardápio digital",
-    text: "Em Breve",
-  },
-];
+export async function getStaticPaths() {
+  const pages = [
+    {
+      slug: undefined,
+      title: "Astro Store",
+      text: "Welcome to the Astro store!",
+    },
+    {
+      slug: "dieta-ai",
+      title: "Dieta AI",
+      text: "Em Breve",
+    },
+    {
+      slug: "agenda-paragominas",
+      title: "Agenda Paragominas",
+      text: "Em Breve",
+    },
+    {
+      slug: "blog-mdx",
+      title: "Blog MDX",
+      text: "Em Breve",
+    },
+    {
+      slug: "sunclean-energia-solar",
+      title: "Sunclean Energia Solar",
+      text: "Em Breve",
+    },
+    {
+      slug: "cardapio-digital",
+      title: "Cardápio digital",
+      text: "Em Breve",
+    },
+  ];
+  return pages.map(({ slug, title, text }) => {
+    return {
+      params: { slug },
+      props: { title, text },
+    };
+  });
+}
 
-const { slug } = Astro.params;
-const page = pages.find((page) => page.slug === slug);
-if (!page) return Astro.redirect("/404");
-const { title, text } = page;
+const { title, text } = Astro.props;
 ---
 
 <Layout title={title}>
