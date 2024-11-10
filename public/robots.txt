@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://vinidev-astro.vercel.app/sitemap.xml

@@ -1,4 +1,5 @@
 import react from "@astrojs/react";
+import sitemap from "@astrojs/sitemap";
 import starlight from "@astrojs/starlight";
 import tailwind from "@astrojs/tailwind";
 import vercel from "@astrojs/vercel/serverless";
@@ -19,7 +20,9 @@ export default defineConfig({
 			title: "My Documentation",
 			plugins: [],
 		}),
+		sitemap(),
 	],
+	site: "https://vinidev-astro.vercel.app",
 
 	image: {
 		domains: ["utfs.io"],
