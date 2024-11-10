@@ -69,6 +69,7 @@ export function ListaDeProjetos() {
 										src={project.imageURL}
 										alt={`Imagem do projeto ${project.name}`}
 										className="object-cover"
+										loading="lazy"
 									/>
 								</div>
 								<div className="flex flex-col gap-2 mt-2">
