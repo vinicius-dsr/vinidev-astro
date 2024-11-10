@@ -10,48 +10,42 @@ export function ListaDeProjetos() {
 		{
 			name: "Dieta AI",
 			slug: "dieta-ai",
-			imageURL:
-				"https://utfs.io/f/FRVsZCSgds63xB92BXaLvRdsJSfNzOngi1ruactw54ZFKy0T",
+			imageURL: "/dieta-ai.webp",
 			tag: "App Mobile",
 			date: "2024",
 		},
 		{
 			name: "Agenda Paragominas",
 			slug: "agenda-paragominas",
-			imageURL:
-				"https://utfs.io/f/FRVsZCSgds63GPW7SgrGDo7E5ZMVRCJ0dpvaf26WjOg9cFNL",
+			imageURL: "/agenda-pgm.webp",
 			tag: "Web App",
 			date: "2024",
 		},
 		{
 			name: "Blog MDX",
 			slug: "blog-mdx",
-			imageURL:
-				"https://utfs.io/f/FRVsZCSgds63g7pidOKi9fuI6HUAVmogTlD1bcSeQa0dwqp8",
+			imageURL: "/project-blog.webp",
 			tag: "Blog",
 			date: "2024",
 		},
 		{
 			name: "Reis & Reis - Advocacia",
 			slug: "reis-reis-advocacia",
-			imageURL:
-				"https://utfs.io/f/FRVsZCSgds63zo4X147PpFSchIKjQxHXruADbyBiGvaMq17s",
+			imageURL: "/project-adv.webp",
 			tag: "Lading Page",
 			date: "2024",
 		},
 		{
 			name: "Sunclean - Energia Solar",
 			slug: "sunclean-energia-solar",
-			imageURL:
-				"https://utfs.io/f/FRVsZCSgds63SdvZzzyePxKjV4kv25pclJYUh3LRTsFgtdBA",
+			imageURL: "/energia-solar.webp",
 			tag: "Lading Page",
 			date: "2024",
 		},
 		{
 			name: "Cardápio Digital",
 			slug: "cardapio-digital",
-			imageURL:
-				"https://utfs.io/f/FRVsZCSgds63wrJw7SCKnrjqaFm6TNG0kl5Avt4PgZy1wBVu",
+			imageURL: "/project-cardapio.webp",
 			tag: "E-commerce",
 			date: "2024",
 		},

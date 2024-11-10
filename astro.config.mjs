@@ -1,6 +1,5 @@
 import react from "@astrojs/react";
 import sitemap from "@astrojs/sitemap";
-import starlight from "@astrojs/starlight";
 import tailwind from "@astrojs/tailwind";
 import vercel from "@astrojs/vercel/serverless";
 // @ts-check
@@ -11,12 +10,14 @@ export default defineConfig({
 		enabled: false,
 	},
 	output: "hybrid",
-	adapter: vercel(),
+	adapter: vercel({
+		webAnalytics: { enabled: true },
+	}),
 
 	integrations: [tailwind(), react(), sitemap()],
 	site: "https://vinidev-astro.vercel.app",
 
-	image: {
-		domains: ["utfs.io"],
-	},
+	// image: {
+	// 	domains: ["utfs.io"],
+	// },
 });
