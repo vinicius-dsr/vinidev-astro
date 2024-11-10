@@ -70,6 +70,7 @@ export function ListaDeProjetos() {
 										alt={`Imagem do projeto ${project.name}`}
 										className="object-cover"
 										loading="lazy"
+										sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
 									/>
 								</div>
 								<div className="flex flex-col gap-2 mt-2">
