@@ -13,15 +13,7 @@ export default defineConfig({
 	output: "hybrid",
 	adapter: vercel(),
 
-	integrations: [
-		tailwind(),
-		react(),
-		starlight({
-			title: "My Documentation",
-			plugins: [],
-		}),
-		sitemap(),
-	],
+	integrations: [tailwind(), react(), sitemap()],
 	site: "https://vinidev-astro.vercel.app",
 
 	image: {
