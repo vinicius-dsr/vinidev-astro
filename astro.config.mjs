@@ -15,9 +15,5 @@ export default defineConfig({
 	}),
 
 	integrations: [tailwind(), react(), sitemap()],
-	site: "https://vinidev-astro.vercel.app",
-
-	image: {
-		domains: ["github.com"],
-	},
+	site: "https://vinidev.tech",
 });
