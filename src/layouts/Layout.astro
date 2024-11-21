@@ -13,6 +13,7 @@ import Header from "@/components/Header.astro";
     <link rel="icon" type="image/svg+xml" href="/favicon.ico" />
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
     <meta
       name="description"
       content="Vinícius Reis | Desenvolver front-end focando em desenvolvimento de websites e landig pages. Projeto sempre tendo em vista a melhor experiência do usuário, alinhada com um bom visual e o propósito/objetivo do projeto."
@@ -47,5 +48,13 @@ import Header from "@/components/Header.astro";
     <Header />
     <slot />
     <Footer />
+    <script is:inline src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script is:inline>
+      AOS.init({
+        duration: 800,
+        once: true,
+        offset: 100,
+      });
+    </script>
   </body>
 </html>
