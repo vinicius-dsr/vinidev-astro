@@ -7,10 +7,10 @@ import { Tab, TabItem } from "free-astro-components";
   class="max-w-screen-lg mx-auto md:py-20 md:mt-10 py-10 md:min-h-[90vh] mx:px-0 px-4"
   id="sobre"
 >
-  <div class="flex gap-10 md:flex-row flex-col" data-aos="fade-right">
+  <div class="flex gap-10 md:flex-row flex-col">
     <!-- Foto  -->
-    <div class="md:min-w-[25vw] w-full">
-      <div class="rounde-md">
+    <div class="md:min-w-[25vw] w-full" data-aos="fade-right">
+      <div class="rounded-md">
         <img
           src="/foto-vinicius.webp"
           alt="Foto de Vinícius Reis, Desenvolvedor Front-end"
@@ -20,7 +20,7 @@ import { Tab, TabItem } from "free-astro-components";
     </div>
 
     <!-- Tabs sobre mim -->
-    <div class="w-full">
+    <div class="w-full" data-aos="fade-left">
       <Tab
         tabs={[
           { label: "Sobre mim", active: true },

@@ -14,16 +14,15 @@ import Layout from "@/layouts/Layout.astro";
   <section
     id="projetos"
     class="max-w-screen-lg mx-auto md:py-24 py-10 md:mt-20 md:mb-10 mx:px-0 px-4 md:min-h-auto min-h-[80vh]"
-    data-aos="fade-down"
   >
-    <div class="flex flex-col gap-4 mb-4">
+    <div class="flex flex-col gap-4 mb-4" data-aos="fade-right">
       <span
         class="md:text-xl text-base font-semibold uppercase dark:text-primary-dark text-primary-light"
         >Meus projetos</span
       >
       <h2 class="md:text-5xl text-3xl">Conheça um pouco do meu trabalho</h2>
     </div>
-    <ListaDeProjetos client:only="react" />
+    <ListaDeProjetos client:only="react" data-aos="fade-up" />
   </section>
   <Contato />
 </Layout>
