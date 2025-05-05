@@ -4,43 +4,6 @@ import { projects } from "@/data/projects";
 import Layout from "@/layouts/Layout.astro";
 
 export async function getStaticPaths() {
-  // const pages = [
-  //   {
-  //     slug: undefined,
-  //     title: "Astro Store",
-  //     text: "Welcome to the Astro store!",
-  //   },
-  //   {
-  //     slug: "lp-psicologia",
-  //     title: "Lading Page de Psicologia",
-  //     text: "Em Breve",
-  //   },
-  //   {
-  //     slug: "agenda-paragominas",
-  //     title: "Agenda Paragominas",
-  //     text: "Em Breve",
-  //   },
-  //   {
-  //     slug: "blog-mdx",
-  //     title: "Blog MDX",
-  //     text: "Em Breve",
-  //   },
-  //   {
-  //     slug: "sunclean-energia-solar",
-  //     title: "Sunclean Energia Solar",
-  //     text: "Em Breve",
-  //   },
-  //   {
-  //     slug: "cardapio-digital",
-  //     title: "Cardápio digital",
-  //     text: "Em Breve",
-  //   },
-  //   {
-  //     slug: "dieta-ai",
-  //     title: "Dieta AI",
-  //     text: "Em Breve",
-  //   },
-  // ];
   return projects.map(({ slug, name, description }) => {
     return {
       params: { slug },
