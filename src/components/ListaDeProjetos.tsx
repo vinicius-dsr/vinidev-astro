@@ -4,65 +4,66 @@ import {
 	CarouselItem,
 	CarouselNavigation,
 } from "@/components/core/carousel";
+import { projects } from "@/data/projects";
 
 export function ListaDeProjetos() {
-	const projectList = [
-		{
-			name: "Lading Page de Psicologia",
-			slug: "lp-psicologia",
-			imageURL: "/psicologia.avif",
-			tag: "Landing Page",
-			date: "2024",
-		},
-		{
-			name: "Agenda Paragominas",
-			slug: "agenda-paragominas",
-			imageURL: "/agenda-pgm.avif",
-			tag: "Web App",
-			date: "2024",
-		},
-		{
-			name: "Blog MDX",
-			slug: "blog-mdx",
-			imageURL: "/project-blog.avif",
-			tag: "Blog",
-			date: "2024",
-		},
-		{
-			name: "Reis & Reis - Advocacia",
-			slug: "reis-reis-advocacia",
-			imageURL: "/project-adv.avif",
-			tag: "Lading Page",
-			date: "2024",
-		},
-		{
-			name: "Sunclean - Energia Solar",
-			slug: "sunclean-energia-solar",
-			imageURL: "/energia-solar.avif",
-			tag: "Lading Page",
-			date: "2024",
-		},
-		{
-			name: "Cardápio Digital",
-			slug: "cardapio-digital",
-			imageURL: "/project-cardapio.avif",
-			tag: "E-commerce",
-			date: "2024",
-		},
-		{
-			name: "Dieta AI",
-			slug: "dieta-ai",
-			imageURL: "/dieta-ai.avif",
-			tag: "App Mobile",
-			date: "2024",
-		},
-	];
+	// const projectList = [
+	// 	{
+	// 		name: "Lading Page de Psicologia",
+	// 		slug: "lp-psicologia",
+	// 		imageURL: "/psicologia.avif",
+	// 		tag: "Landing Page",
+	// 		date: "2024",
+	// 	},
+	// 	{
+	// 		name: "Agenda Paragominas",
+	// 		slug: "agenda-paragominas",
+	// 		imageURL: "/agenda-pgm.avif",
+	// 		tag: "Web App",
+	// 		date: "2024",
+	// 	},
+	// 	{
+	// 		name: "Blog MDX",
+	// 		slug: "blog-mdx",
+	// 		imageURL: "/project-blog.avif",
+	// 		tag: "Blog",
+	// 		date: "2024",
+	// 	},
+	// 	{
+	// 		name: "Reis & Reis - Advocacia",
+	// 		slug: "reis-reis-advocacia",
+	// 		imageURL: "/project-adv.avif",
+	// 		tag: "Lading Page",
+	// 		date: "2024",
+	// 	},
+	// 	{
+	// 		name: "Reis & Reis - Advocacia",
+	// 		slug: "reis-reis-advocacia",
+	// 		imageURL: "/project-adv.avif",
+	// 		tag: "Lading Page",
+	// 		date: "2024",
+	// 	},
+	// 	{
+	// 		name: "Cardápio Digital",
+	// 		slug: "cardapio-digital",
+	// 		imageURL: "/project-cardapio.avif",
+	// 		tag: "E-commerce",
+	// 		date: "2024",
+	// 	},
+	// 	{
+	// 		name: "Dieta AI",
+	// 		slug: "dieta-ai",
+	// 		imageURL: "/dieta-ai.avif",
+	// 		tag: "App Mobile",
+	// 		date: "2024",
+	// 	},
+	// ];
 
 	return (
 		<div className="relative w-full py-8">
 			<Carousel>
 				<CarouselContent>
-					{projectList.map((project) => (
+					{projects.map((project) => (
 						<CarouselItem key={project.name}>
 							<a href={project.slug} className="flex flex-col gap-2">
 								<div className="relative aspect-video w-full overflow-hidden rounded-md">
