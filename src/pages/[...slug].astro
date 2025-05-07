@@ -19,8 +19,12 @@ const { name, description, imageURL } = Astro.props;
   <div
     class="py-20 min-h-[80vh] max-w-screen-lg mx-auto md:px-0 px-4 text-center items-center flex flex-col gap-4 justify-center"
   >
-    <h1 class="text-4xl font-medium uppercase">{name}</h1>
-    <span class="text-2xl">{description}</span>
+    <h1
+      class="md:text-xl text-base font-semibold uppercase dark:text-primary-dark text-primary-light"
+    >
+      {name}
+    </h1>
+    <span class="md:text-5xl text-3xl">{description}</span>
     <img
       src={imageURL}
       alt={name}

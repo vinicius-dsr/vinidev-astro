@@ -15,7 +15,7 @@ export const projects = [
 		slug: "agenda-paragominas",
 		imageURL: "/agenda-pgm.avif",
 		description:
-			"Projetos MVP criado como um hub digital onde contem em seu banco de dados vários estabelecimentos e serviços da cidade de Paragominas.",
+			"Projetos MVP criado como um hub digital onde contém em seu banco de dados vários estabelecimentos e serviços da cidade de Paragominas.",
 		tag: "Web App",
 		date: "2024",
 	},
