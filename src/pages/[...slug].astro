@@ -4,23 +4,38 @@ import { projects } from "@/data/projects";
 import Layout from "@/layouts/Layout.astro";
 
 export async function getStaticPaths() {
-  return projects.map(({ slug, name, description }) => {
+  return projects.map(({ slug, name, description, imageURL }) => {
     return {
       params: { slug },
-      props: { name, description },
+      props: { name, description, imageURL },
     };
   });
 }
 
-const { name, description } = Astro.props;
+const { name, description, imageURL } = Astro.props;
 ---
 
 <Layout title={name}>
   <div
     class="py-20 min-h-[80vh] max-w-screen-lg mx-auto md:px-0 px-4 text-center items-center flex flex-col gap-4 justify-center"
   >
-    <h1 class="text-2xl font-medium">{name}</h1>
-    <span class="text-5xl">{description}</span>
-    <Button variant="primary" href="/" class="mt-4">Voltar para a Home</Button>
+    <h1 class="text-4xl font-medium uppercase">{name}</h1>
+    <span class="text-2xl">{description}</span>
+    <img
+      src={imageURL}
+      alt={name}
+      class="w-full h-auto max-w-[600px] mt-8 rounded-lg shadow-lg"
+    />
+    <!-- <div class="flex flex-col gap-2 mt-8 items-center">
+      <p>Links relacionados</p>
+      <div class="flex gap-4">
+        <a href="" class="hover:underline hover:text-primary transition-all"
+          >Site</a
+        >
+        <a href="" class="hover:underline hover:text-primary transition-all"
+          >Github</a
+        >
+      </div> -->
   </div>
+  <!-- <Button variant="primary" href="/" class="mt-4">Voltar para a Home</Button> -->
 </Layout>
