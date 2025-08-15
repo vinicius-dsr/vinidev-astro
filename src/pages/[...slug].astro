@@ -4,51 +4,112 @@ import { projects } from "@/data/projects";
 import Layout from "@/layouts/Layout.astro";
 
 export async function getStaticPaths() {
-  return projects.map(({ slug, name, description, imageURL, links }) => {
+  return projects.map(({ slug, name, description, imageURL, links, tag, date, techs, details }) => {
     return {
       params: { slug },
-      props: { name, description, imageURL, links },
+      props: { name, description, imageURL, links, tag, date, techs, details },
     };
   });
 }
 
-const { name, description, imageURL } = Astro.props;
+const { name, description, imageURL, tag, date, techs, details } = Astro.props;
 ---
 
 <Layout title={name}>
-  <div
-    class="py-20 min-h-[80vh] max-w-screen-lg mx-auto md:px-0 px-4 text-center items-center flex flex-col gap-4 justify-center"
-  >
-    <h1
-      class="md:text-xl text-base font-semibold uppercase dark:text-primary-dark text-primary-light"
-    >
-      {name}
-    </h1>
-    <span class="md:text-5xl text-3xl">{description}</span>
-    <img
-      src={imageURL}
-      alt={name}
-      class="w-full h-auto max-w-[600px] mt-8 rounded-lg shadow-lg"
-    />
-    {
-      Astro.props.links && Object.keys(Astro.props.links).length > 0 && (
-        <div class="flex flex-col gap-2 mt-8 items-center">
-          <p>Links relacionados</p>
-          <div class="flex gap-4">
-            {Object.entries(Astro.props.links).map(([label, url]) => (
-              <a
-                href={url}
-                class="hover:underline hover:text-primary transition-all"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                {label.charAt(0).toUpperCase() + label.slice(1)}
-              </a>
-            ))}
+  <div class="py-20 min-h-[80vh] max-w-screen-lg mx-auto md:px-0 px-4">
+    <div class="flex flex-col md:flex-row gap-8 items-start">
+      <!-- Imagem do Projeto -->
+      <div class="md:w-1/2 w-full">
+        <img
+          src={imageURL}
+          alt={name}
+          class="w-full h-auto rounded-lg shadow-lg object-cover"
+          loading="eager"
+        />
+      </div>
+
+      <!-- Informações do Projeto -->
+      <div class="md:w-1/2 w-full flex flex-col gap-6">
+        <div>
+          <div class="flex items-center gap-3 mb-2">
+            <span class="px-3 py-1 bg-zinc-100 dark:bg-zinc-800 rounded-full text-sm font-medium">{tag}</span>
+            <span class="text-zinc-500 dark:text-zinc-400 text-sm">{date}</span>
           </div>
+          <h1 class="md:text-4xl text-3xl font-bold mb-4">{name}</h1>
+          <p class="text-lg text-zinc-700 dark:text-zinc-300">{description}</p>
         </div>
-      )
-    }
+        
+        {details && (
+          <div>
+            <h2 class="text-xl font-semibold mb-3">Detalhes do Projeto</h2>
+            <p class="text-zinc-700 dark:text-zinc-300">{details}</p>
+          </div>
+        )}
+        
+        {techs && techs.length > 0 && (
+          <div>
+            <h2 class="text-xl font-semibold mb-3">Tecnologias Utilizadas</h2>
+            <div class="flex flex-wrap gap-2">
+              {techs.map((tech) => (
+                <span class="px-3 py-1 bg-zinc-100 dark:bg-zinc-800 rounded-full text-sm">{tech}</span>
+              ))}
+            </div>
+          </div>
+        )}
+
+        {Astro.props.links && Object.keys(Astro.props.links).length > 0 && (
+          <div class="mt-4">
+            <h2 class="text-xl font-semibold mb-3">Links do Projeto</h2>
+            <div class="flex flex-wrap gap-3">
+              {Object.entries(Astro.props.links).map(([label, url]) => (
+                <a
+                  href={url}
+                  class="px-4 py-2 bg-zinc-100 hover:bg-zinc-200 dark:bg-zinc-800 dark:hover:bg-zinc-700 rounded-md transition-all flex items-center gap-2"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <span>{label.charAt(0).toUpperCase() + label.slice(1)}</span>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-external-link"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" x2="21" y1="14" y2="3"/></svg>
+                </a>
+              ))}
+            </div>
+          </div>
+        )}
   </div>
-  <!-- <Button variant="primary" href="/" class="mt-4">Voltar para a Home</Button> -->
+    </div>
+  </div>
+
+  <!-- Seção de Navegação e Outros Projetos -->
+  <div class="max-w-screen-lg mx-auto md:px-0 px-4 pb-20">
+    <div class="flex justify-between items-center mb-8">
+      <Button variant="primary" href="/" class="flex items-center gap-2">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-left"><path d="m12 19-7-7 7-7"/><path d="M19 12H5"/></svg>
+        Voltar para a Home
+      </Button>
+    </div>
+
+    <!-- Outros Projetos -->
+    <div class="mt-12">
+      <h2 class="text-2xl font-bold mb-6">Outros Projetos</h2>
+      <div class="grid md:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-6">
+        {projects.filter(project => project.slug !== Astro.params.slug).slice(0, 3).map(project => (
+          <a href={`/${project.slug}`} class="group">
+            <div class="overflow-hidden rounded-lg">
+              <img
+                src={project.imageURL}
+                alt={project.name}
+                class="w-full aspect-video object-cover transition-transform duration-300 group-hover:scale-105"
+              />
+            </div>
+            <div class="mt-3">
+              <div class="flex items-center gap-2 mb-1">
+                <span class="text-xs px-2 py-1 bg-zinc-100 dark:bg-zinc-800 rounded-full">{project.tag}</span>
+                <span class="text-xs text-zinc-500">{project.date}</span>
+              </div>
+              <h3 class="font-medium group-hover:text-primary-light dark:group-hover:text-primary-dark transition-colors">{project.name}</h3>
+            </div>
+          </a>
+        ))}
+      </div>
+    </div>
 </Layout>
