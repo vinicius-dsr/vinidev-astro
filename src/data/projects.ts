@@ -72,7 +72,7 @@ export const projects = [
 			"Projeto de cardápio digital para restaurantes, bares e lanchonetes. Feito para fins didátivos com fotos, valores e informações fictícias.",
 		tag: "E-commerce",
 		date: "2024",
-		techs: ["React", "Next.js", "Tailwind CSS", "TypeScript", "Zustand"],
+		techs: ["HTML", "JavasScript", "Tailwind CSS"],
 		details: "Solução de cardápio digital interativo para estabelecimentos gastronômicos. Permite aos clientes visualizar os itens do menu com fotos, descrições e preços, além de realizar pedidos diretamente pelo aplicativo. Inclui funcionalidades de filtragem por categoria e busca.",
 	},
 	{
