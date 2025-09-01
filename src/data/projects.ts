@@ -27,7 +27,7 @@ export const projects = [
 			"Projetos MVP criado como um hub digital onde contém em seu banco de dados vários estabelecimentos e serviços da cidade de Paragominas.",
 		tag: "Web App",
 		date: "2024",
-		techs: ["React", "Next.js", "Tailwind CSS", "Prisma", "PostgreSQL"],
+		techs: ["React", "Next.js", "Tailwind CSS", "Prisma", "PostgreSQL", "Zod", "TyperScript"],
 		details: "Aplicação web completa que funciona como um diretório digital para a cidade de Paragominas. Permite aos usuários encontrar facilmente estabelecimentos, serviços e informações locais, com sistema de busca e categorização.",
 	},
 	{
@@ -43,7 +43,7 @@ export const projects = [
 			"Blog criado para fins didáticos, com o intuito de aprender e ensinar. Ele conta com artigos escritos em MDX, que é uma extensão do Markdown que permite incluir componentes React dentro do conteúdo.",
 		tag: "Blog",
 		date: "2024",
-		techs: ["React", "Next.js", "MDX", "Tailwind CSS", "ContentLayer"],
+		techs: ["React", "Next.js", "MDX", "Tailwind CSS", "Velite"],
 		details: "Plataforma de blog moderna que utiliza MDX para criar conteúdo rico e interativo. Permite a integração de componentes React diretamente nos artigos, oferecendo uma experiência de leitura dinâmica e personalizada.",
 	},
 	{
@@ -86,7 +86,7 @@ export const projects = [
 			"Aplicativo mobile para controle de dieta geradas por inteligência artificial.",
 		tag: "App Mobile",
 		date: "2024",
-		techs: ["React Native", "Expo", "TypeScript", "OpenAI API", "Firebase"],
+		techs: ["React Native", "Expo", "TypeScript", "API RESTful", "Google Generative AI", "react-hook-form", "Zod", "Axios"],
 		details: "Aplicativo móvel inovador que utiliza inteligência artificial para gerar planos de dieta personalizados. Os usuários podem inserir suas preferências alimentares, restrições e objetivos, e o aplicativo cria um plano alimentar adaptado às suas necessidades. Inclui recursos de acompanhamento de progresso e lembretes de refeições.",
 	},
 ];
