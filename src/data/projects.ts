@@ -29,6 +29,19 @@ export const projects = [
 		date: "2024",
 		techs: ["React", "Next.js", "Tailwind CSS", "Prisma", "PostgreSQL", "Zod", "TyperScript"],
 		details: "Aplicação web completa que funciona como um diretório digital para a cidade de Paragominas. Permite aos usuários encontrar facilmente estabelecimentos, serviços e informações locais, com sistema de busca e categorização.",
+	},	{
+		name: "ZapBot",
+		slug: "zapbot",
+			links: {
+			github: "https://github.com/vinicius-dsr/zapBot",
+		},
+		imageURL: "/zapbot.avif",
+		description:
+			"ZapBot é um chatbot para WhatsApp que permite visualizar o status de conexão e o QR Code para autenticação via uma interface web simples.",
+		tag: "Bot",
+		date: "2025",
+		techs: ["Node.js", "Express", "Socket.io", "whatsapp-web.js", "qrcode"],
+		details: "Pode ser usado como case para diversos projetos, basta adicionar lógica ao bot, conecta-lo à um modelo de IA, banco de dados etc. As possibilidades são infinitas.",
 	},
 	{
 		name: "Blog MDX",
