@@ -29,7 +29,8 @@ export const projects = [
 		date: "2024",
 		techs: ["React", "Next.js", "Tailwind CSS", "Prisma", "PostgreSQL", "Zod", "TyperScript"],
 		details: "Aplicação web completa que funciona como um diretório digital para a cidade de Paragominas. Permite aos usuários encontrar facilmente estabelecimentos, serviços e informações locais, com sistema de busca e categorização.",
-	},	{
+	},
+	{
 		name: "ZapBot",
 		slug: "zapbot",
 			links: {
@@ -58,6 +59,20 @@ export const projects = [
 		date: "2024",
 		techs: ["React", "Next.js", "MDX", "Tailwind CSS", "Velite"],
 		details: "Plataforma de blog moderna que utiliza MDX para criar conteúdo rico e interativo. Permite a integração de componentes React diretamente nos artigos, oferecendo uma experiência de leitura dinâmica e personalizada.",
+	},
+	{
+		name: "Fluxo de Autenticação com Expo e Clerk",
+		slug: "expo-clerk-auth",
+					links: {
+			github: "https://github.com/vinicius-dsr/expo-auth-clerk",
+		},
+		imageURL: "/expo-auth-clerk.avif",
+		description:
+			"Este projeto demonstra um fluxo de autenticação usando Expo e Clerk em uma aplicação React Native.",
+		tag: "App Mobile",
+		date: "2024",
+		techs: ["React", "Next.js", "MDX", "Tailwind CSS", "Velite"],
+		details: "Login com Google OAuth, rotas protegidas para usuário autenticados, rotas públicas para usuários não autênticados e gerenciamento de sessão e perfil do usuário. Ideal para quem deseja implementar autenticação segura em aplicativos móveis.",
 	},
 	{
 		name: "Reis & Reis - Advocacia",
