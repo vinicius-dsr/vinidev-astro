@@ -71,7 +71,7 @@ export const projects = [
 			"Este projeto demonstra um fluxo de autenticação usando Expo e Clerk em uma aplicação React Native.",
 		tag: "App Mobile",
 		date: "2024",
-		techs: ["React", "Next.js", "MDX", "Tailwind CSS", "Velite"],
+		techs: ["React Native", "Expo", "MDX", "Tailwind CSS", "Velite"],
 		details: "Login com Google OAuth, rotas protegidas para usuário autenticados, rotas públicas para usuários não autênticados e gerenciamento de sessão e perfil do usuário. Ideal para quem deseja implementar autenticação segura em aplicativos móveis.",
 	},
 	{
