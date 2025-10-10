@@ -37,6 +37,19 @@ import "@/styles/global.css";
       rel="stylesheet"
     />
     <title>{title}</title>
+    <script is:inline>
+      // Inicializa o tema antes da página carregar para evitar flash
+      (function() {
+        const savedTheme = localStorage.getItem('theme');
+        const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+        
+        if (savedTheme === 'dark' || (!savedTheme && prefersDark)) {
+          document.documentElement.classList.add('dark');
+        } else {
+          document.documentElement.classList.remove('dark');
+        }
+      })();
+    </script>
     <style>
       #spinner {
         position: fixed;

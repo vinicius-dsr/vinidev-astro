@@ -5,10 +5,11 @@ import SunIcon from "@/components/icons/SunIcon.astro";
 
 <button
   id="theme-toggle"
-  class="p-2 text-text-light dark:text-text-dark rounded-full"
+  class="p-2 text-text-light dark:text-text-dark rounded-full hover:bg-gray-200 dark:hover:bg-gray-800 transition-colors"
+  aria-label="Toggle theme"
 >
-  <span id="theme-icon">
-    <SunIcon id="sun-icon" class="hidden" />
+  <span id="theme-icon" class="block w-5 h-5">
+    <SunIcon id="sun-icon" class="" />
     <MoonIcon id="moon-icon" class="hidden" />
   </span>
 </button>
