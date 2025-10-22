@@ -1,4 +1,4 @@
-import { FaGithub, FaInstagram, FaLinkedin } from "react-icons/fa";
+import { FaGithub, FaInstagram, FaLinkedin, FaWhatsapp } from "react-icons/fa";
 
 export const links = [
 	{
@@ -15,5 +15,10 @@ export const links = [
 		icon: FaInstagram,
 		name: "Instagram",
 		href: "https://www.instagram.com/vinicius_dev/",
+	},
+	{
+		icon: FaWhatsapp,
+		name: "WhatsApp",
+		href: "https://wa.me/5591992761377",
 	},
 ];
