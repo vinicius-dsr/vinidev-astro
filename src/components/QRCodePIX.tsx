@@ -2,23 +2,87 @@ import React, { useState, useEffect } from 'react';
 
 interface QRCodePIXProps {
   className?: string;
+  pixKey?: string;
+  name?: string;
+  city?: string;
+  description?: string;
+  amount?: string; // opcional, em reais (ex: "10.00")
 }
 
-export const QRCodePIX: React.FC<QRCodePIXProps> = ({ className = '' }) => {
+// Utilitários para construir payload EMV QR do PIX
+function tlv(id: string, value: string) {
+  const len = value.length.toString().padStart(2, '0');
+  return `${id}${len}${value}`;
+}
+
+function crc16(payload: string) {
+  // CRC-16/CCITT-FALSE
+  let crc = 0xffff;
+  for (let i = 0; i < payload.length; i++) {
+    crc ^= payload.charCodeAt(i) << 8;
+    for (let j = 0; j < 8; j++) {
+      if ((crc & 0x8000) !== 0) {
+        crc = (crc << 1) ^ 0x1021;
+      } else {
+        crc <<= 1;
+      }
+      crc &= 0xffff;
+    }
+  }
+  return crc.toString(16).toUpperCase().padStart(4, '0');
+}
+
+function buildPixPayload({
+  pixKey,
+  name,
+  city,
+  description,
+  amount,
+}: Required<Pick<QRCodePIXProps, 'pixKey' | 'name' | 'city'>> & Pick<QRCodePIXProps, 'description' | 'amount'>) {
+  const payloadFormat = tlv('00', '01'); // Payload Format Indicator
+  const poiMethod = tlv('01', '11'); // Static (11)
+
+  // Merchant Account Information (ID 26)
+  const gui = tlv('00', 'br.gov.bcb.pix');
+  const key = tlv('01', pixKey);
+  const desc = description ? tlv('02', description) : '';
+  const mai = tlv('26', gui + key + desc);
+
+  const mcc = tlv('52', '0000');
+  const currency = tlv('53', '986');
+  const country = tlv('58', 'BR');
+  const merchantName = tlv('59', name.toUpperCase().slice(0, 25));
+  const merchantCity = tlv('60', city);
+  const amountField = amount ? tlv('54', amount) : '';
+
+  // Sem dados adicionais (ID 62) por simplicidade
+
+  // Sem o CRC por enquanto, adicionamos o ID 63 com comprimento 04 e calculamos
+  const partial = payloadFormat + poiMethod + mai + mcc + currency + (amountField || '') + country + merchantName + merchantCity + '6304';
+  const crc = crc16(partial);
+  return partial + crc;
+}
+
+export const QRCodePIX: React.FC<QRCodePIXProps> = ({
+  className = '',
+  pixKey = 'da28fedd-af6e-47ad-b5c4-0ac612b93842',
+  name = 'VINICIUS DOS SANTOS REIS',
+  city = 'Paragominas',
+  description,
+  amount,
+}) => {
   const [qrCodeUrl, setQrCodeUrl] = useState<string>('');
   const [isLoading, setIsLoading] = useState(true);
   const [copySuccess, setCopySuccess] = useState(false);
 
-  // Chave PIX fornecida pelo usuário
-  const pixKey = "00020126780014br.gov.bcb.pix0136da28fedd-af6e-47ad-b5c4-0ac612b938420216Me pague um cafe5204000053039865802BR5924VINICIUS DOS SANTOS REIS6009Sao Paulo62290525REC68F903458AB408534306386304F70";
+  // Payload PIX (Copia e Cola) gerado a partir da chave PIX
+  const pixPayload = buildPixPayload({ pixKey, name, city, description, amount });
 
   useEffect(() => {
-    // Gerar QR Code usando API pública
     const generateQRCode = async () => {
       try {
         setIsLoading(true);
-        // Usando a API do QR Server para gerar o QR Code
-        const qrUrl = `https://api.qrserver.com/v1/create-qr-code/?size=300x300&data=${encodeURIComponent(pixKey)}`;
+        const qrUrl = `https://api.qrserver.com/v1/create-qr-code/?size=300x300&data=${encodeURIComponent(pixPayload)}`;
         setQrCodeUrl(qrUrl);
       } catch (error) {
         console.error('Erro ao gerar QR Code:', error);
@@ -28,15 +92,16 @@ export const QRCodePIX: React.FC<QRCodePIXProps> = ({ className = '' }) => {
     };
 
     generateQRCode();
-  }, []);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [pixPayload]);
 
-  const copyPixKey = async () => {
+  const copyPixPayload = async () => {
     try {
-      await navigator.clipboard.writeText(pixKey);
+      await navigator.clipboard.writeText(pixPayload);
       setCopySuccess(true);
       setTimeout(() => setCopySuccess(false), 2000);
     } catch (error) {
-      console.error('Erro ao copiar chave PIX:', error);
+      console.error('Erro ao copiar Pix Copia e Cola:', error);
     }
   };
 
@@ -60,17 +125,15 @@ export const QRCodePIX: React.FC<QRCodePIXProps> = ({ className = '' }) => {
         )}
       </div>
 
-      {/* PIX Key Copy Section */}
+      {/* PIX Copy Section */}
       <div className="w-full max-w-md">
-        <p className="text-sm font-medium mb-2 text-center">
-          Ou copie a chave PIX:
-        </p>
+        <p className="text-sm font-medium mb-2 text-center">Copia e Cola (PIX):</p>
         <div className="flex items-center space-x-2">
           <div className="flex-1 bg-secondary-light dark:bg-background-dark border border-zinc-300 dark:border-zinc-800 rounded-lg p-3 text-xs font-mono break-all">
-            {pixKey.substring(0, 50)}...
+            {pixPayload.substring(0, 50)}...
           </div>
           <button
-            onClick={copyPixKey}
+            onClick={copyPixPayload}
             className={`px-4 py-2.5 flex items-center gap-2 rounded-xl font-medium transition-colors ${
               copySuccess
                 ? 'bg-green-500 text-white'
@@ -90,7 +153,7 @@ export const QRCodePIX: React.FC<QRCodePIXProps> = ({ className = '' }) => {
           </button>
         </div>
         <p className="text-xs mt-2 text-center">
-          {copySuccess ? 'Chave PIX copiada!' : 'Clique para copiar a chave PIX completa'}
+          {copySuccess ? 'Copia e Cola copiado!' : 'Clique para copiar o Pix Copia e Cola completo'}
         </p>
       </div>
 
