@@ -1,0 +1,92 @@
+---
+import Nav from "@/components/Nav.astro";
+---
+
+<!-- Botão de abertura (visível apenas em mobile) -->
+<button
+  id="mobile-menu-button"
+  class="md:hidden p-2 rounded-md border border-secondary dark:border-gray-700 text-text-light dark:text-text-dark hover:bg-secondary/60 dark:hover:bg-gray-800 transition-colors"
+  aria-controls="mobile-menu-overlay"
+  aria-expanded="false"
+  aria-label="Abrir menu"
+  type="button"
+>
+  <span class="sr-only">Abrir menu</span>
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    fill="none"
+    viewBox="0 0 24 24"
+    stroke-width="1.5"
+    stroke="currentColor"
+    class="w-6 h-6"
+  >
+    <path
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"></path>
+  </svg>
+</button>
+
+<!-- Overlay do menu -->
+<div
+  id="mobile-menu-overlay"
+  class="fixed inset-0 hidden bg-black/40 backdrop-blur-sm z-50"
+  role="dialog"
+  aria-modal="true"
+>
+  <div
+    class="absolute top-0 right-0 h-full w-80 max-w-[85%] bg-background-light dark:bg-background-dark border-l border-secondary dark:border-gray-700 shadow-2xl p-6 flex flex-col"
+  >
+    <div class="flex items-center justify-between mb-6">
+      <span class="font-semibold text-lg">Menu</span>
+      <button
+        id="mobile-menu-close"
+        class="p-2 rounded-md hover:bg-secondary/60 dark:hover:bg-gray-800"
+        aria-label="Fechar menu"
+        type="button"
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke-width="1.5"
+          stroke="currentColor"
+          class="w-6 h-6"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="M6 18L18 6M6 6l12 12"></path>
+        </svg>
+      </button>
+    </div>
+
+    <Nav mode="mobile" />
+  </div>
+</div>
+
+<script>
+  const btn = document.getElementById("mobile-menu-button");
+  const overlay = document.getElementById("mobile-menu-overlay");
+  const closeBtn = document.getElementById("mobile-menu-close");
+
+  function openMenu() {
+    overlay?.classList.remove("hidden");
+    btn?.setAttribute("aria-expanded", "true");
+    document.body.style.overflow = "hidden";
+  }
+  function closeMenu() {
+    overlay?.classList.add("hidden");
+    btn?.setAttribute("aria-expanded", "false");
+    document.body.style.overflow = "";
+  }
+
+  btn?.addEventListener("click", openMenu);
+  closeBtn?.addEventListener("click", closeMenu);
+  overlay?.addEventListener("click", (e) => {
+    if (e.target === overlay) closeMenu();
+  });
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape") closeMenu();
+  });
+</script>

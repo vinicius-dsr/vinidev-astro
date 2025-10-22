@@ -2,6 +2,7 @@
 import Nav from "@/components/Nav.astro";
 import SocialNav from "@/components/SocialNav.astro";
 import ThemeToggle from "@/components/ThemeToggle.astro";
+import MobileMenu from "@/components/MobileMenu.astro";
 
 const script = `
 document.addEventListener('scroll', () => {
@@ -27,6 +28,7 @@ document.addEventListener('scroll', () => {
       <SocialNav />
       <span class="text-zinc-600 font-thin">|</span>
       <ThemeToggle />
+      <MobileMenu />
     </div>
   </div>
 </header>

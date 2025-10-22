@@ -6,9 +6,10 @@ const navLink = [
   { href: "/#contato", name: "Contato" },
   { href: "/coffee", name: "Contribuir" },
 ];
+const { mode = "desktop" } = Astro.props;
 ---
 
-<nav class="md:flex gap-4 items-center hidden">
+<nav class={mode === "desktop" ? "md:flex gap-4 items-center hidden" : "flex flex-col gap-6 md:hidden"}>
   {
     navLink.map((link) => (
       <a
@@ -29,23 +30,26 @@ const navLink = [
     let current = "";
     navLinks.forEach((link) => {
       const href = link.getAttribute("href");
-      if (href) {
-        const section = document.querySelector(href);
-        if (section instanceof HTMLElement) {
-          const sectionTop = section.offsetTop - 200;
-          if (window.scrollY >= sectionTop) {
-            current = href;
-          }
+      if (!href) return;
+      // Considera apenas anchors de seção (ex: /#sobre) e ignora rotas de página (ex: /coffee)
+      const hasHash = href.includes("#");
+      if (!hasHash) return;
+      const hash = "#" + href.split("#")[1];
+      const section = document.querySelector(hash);
+      if (section instanceof HTMLElement) {
+        const sectionTop = section.offsetTop - 200;
+        if (window.scrollY >= sectionTop) {
+          current = hash;
         }
       }
     });
 
     navLinks.forEach((link) => {
       const href = link.getAttribute("href");
-      if (href) {
-        link.classList.toggle("text-primary", href === current);
-        // link.classList.toggle("font-semibold", href === current);
-      }
+      if (!href) return;
+      const hasHash = href.includes("#");
+      const comparable = hasHash ? "#" + href.split("#")[1] : href;
+      link.classList.toggle("text-primary", comparable === current);
     });
   }
 

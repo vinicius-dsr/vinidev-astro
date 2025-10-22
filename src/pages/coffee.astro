@@ -3,6 +3,8 @@ import Layout from "@/layouts/Layout.astro";
 import Button from "@/components/ui/Button.astro";
 import { QRCodePIX } from "@/components/QRCodePIX";
 import { links } from "@/data/socialLinks";
+import { ArrowLeft } from "lucide-react";
+import { FaWhatsapp } from "react-icons/fa";
 const whatsapp =
   links.find((l) => l.name.toLowerCase() === "whatsapp")?.href ??
   "https://wa.me/5591992761377";
@@ -142,7 +144,7 @@ const whatsapp =
             class="bg-secondary-light dark:bg-background-dark border border-zinc-300 dark:border-zinc-800 rounded-xl p-8"
           >
             <h2 class="md:text-2xl text-xl font-medium mb-6 text-center">
-            Pague via PIX
+              Pague via PIX
             </h2>
 
             <QRCodePIX client:only="react" />
@@ -181,7 +183,7 @@ const whatsapp =
             class="bg-secondary-light dark:bg-background-dark border border-zinc-300 dark:border-zinc-800 rounded-xl p-8 max-w-2xl mx-auto"
           >
             <h3 class="md:text-2xl text-xl font-medium mb-4">
-            Muito obrigado!
+              Muito obrigado!
             </h3>
             <p class="mb-6">
               Cada contribuição, por menor que seja, faz uma grande diferença.
@@ -189,9 +191,11 @@ const whatsapp =
               e criando soluções incríveis!
             </p>
             <div class="flex justify-center gap-4">
-              <Button href="/" variant="primary">← Voltar ao site</Button>
+              <Button href="/" variant="primary"
+                ><ArrowLeft size={17} /> Voltar ao site</Button
+              >
               <Button href={whatsapp} variant="secondary"
-                >Falar no WhatsApp</Button
+                ><FaWhatsapp size={17} /> Falar no WhatsApp</Button
               >
             </div>
           </div>
