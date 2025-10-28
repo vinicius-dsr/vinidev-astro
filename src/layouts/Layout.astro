@@ -31,7 +31,7 @@ import "@/styles/global.css";
     />
     <meta property="og:type" content="website" />
     <meta property="og:image" content="https://github.com/vinicius-dsr.png" />
-    <meta property="og:url" content="https://vinidev.tech" />
+    <meta property="og:url" content="https://viniciusreis.site" />
     <link
       href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&family=Outfit:wght@100..900&display=swap"
       rel="stylesheet"
@@ -43,7 +43,7 @@ import "@/styles/global.css";
         const savedTheme = localStorage.getItem('theme');
         const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
         const html = document.documentElement;
-        
+
         if (savedTheme === 'dark' || (!savedTheme && prefersDark)) {
           html.classList.add('dark');
           html.setAttribute('data-theme', 'dark');
