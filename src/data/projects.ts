@@ -1,6 +1,20 @@
 
 export const projects = [
 	{
+		name: "ESECBR - Offensive Security",
+		slug: "esecbr-offensive-security",
+		links: {
+			website: "https://esecbr.com.br",
+		},
+		imageURL: "/esecbr.avif",
+		description:
+			"Projeto full stack com landing page, blog e área de notícias para empresa de defesa cibernética.",
+		tag: "Full Stack",
+		date: "2025",
+		techs: ["Next.js", "PayloadCMS", "MongoDB", "MinIO", "Coolify", "Resend"],
+		details: "Solução completa de presença digital desenvolvida para a Esecbr. O projeto integra uma landing page, blog e portal de notícias em uma arquitetura robusta e escalável. Conta com um sistema de Newsletter integrado ao Resend, permitindo que usuários assinem e cancelem a assinatura facilmente. Utiliza Next.js para o frontend, PayloadCMS para gerenciamento de conteúdo, com dados no MongoDB e arquivos no MinIO, tudo orquestrado em uma VPS via Coolify.",
+	},
+	{
 		name: "Lading Page de Psicologia",
 		slug: "lp-psicologia",
 		links: {
