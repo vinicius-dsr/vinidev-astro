@@ -34,7 +34,6 @@ export const projects = [
 		slug: "agenda-paragominas",
 			links: {
 			github: "https://github.com/vinicius-dsr/agenda-paragominas",
-			website: "https://agenda-paragominas.vercel.app/",
 		},
 		imageURL: "/agenda-pgm.avif",
 		description:
