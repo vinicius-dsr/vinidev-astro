@@ -14,6 +14,67 @@ export const projects = [
 		techs: ["Next.js", "PayloadCMS", "MongoDB", "MinIO", "Coolify", "Resend"],
 		details: "Solução completa de presença digital desenvolvida para a Esecbr. O projeto integra uma landing page, blog e portal de notícias em uma arquitetura robusta e escalável. Conta com um sistema de Newsletter integrado ao Resend, permitindo que usuários assinem e cancelem a assinatura facilmente. Utiliza Next.js para o frontend, PayloadCMS para gerenciamento de conteúdo, com dados no MongoDB e arquivos no MinIO, tudo orquestrado em uma VPS via Coolify.",
 	},
+		{
+		name: "Telemedicina SaaS",
+		slug: "telemedicina-saas",
+		links: {
+			website: "https://telemedicina-two.vercel.app/",
+		},
+		imageURL: "/telemedicina.avif",
+		description:
+			"Plataforma completa de telemedicina construída com Next.js e shadcn/ui. O projeto oferece landing page institucional, fluxo de autenticação, dashboards para pacientes, médicos e administradores, gestão de consultas, planos de assinatura, prontuários e notificações.",
+		tag: "Full Stack",
+		date: "2025",
+		techs: ["Next.js","shadcn/ui","Prisma ORM","PostgreSQL","Zod","React Hook Form", "Next Auth", "Tailwind CSS"],
+		details: "Lading page responsiva com CTA para login/cadastro, menu mobile e FAQ dem acordeão. Autenticação via NextAuth com Prisma Adapter e páginas protegidas. Gestão de consultas com confirmação por médicos, novos status e notificações automáticas. Dashboards temáticos para cada perfil (cliente, médico, admin) com visual consistente e dark mode. Design system baseado em shadcn/ui.",
+	},
+			{
+		name: "Aptus",
+		slug: "aptus",
+		links: {
+			website: "https://aptus-eight.vercel.app/",
+		},
+		imageURL: "/aptus.avif",
+		description:
+			"Plataforma completa SaaS para geração automática de recursos de multas de trânsito com IA (Gemini 2.5 Flash), sistema de assinaturas e dashboard administrativo.",
+		tag: "Full Stack",
+		date: "2025",
+		techs: [
+			"Next.js 14",
+			"React",
+			"TypeScript",
+			"Tailwind CSS",
+			"shadcn/ui",
+			"Lucide Icons",
+			"react-dropzone",
+			"Next.js API Routes",
+			"Prisma ORM",
+			"PostgreSQL",
+			"NextAuth.js",
+			"bcryptjs",
+			"Gemini 2.5 Flash",
+			"Tesseract.js",
+			"jsPDF",
+			"Nodemailer",
+		],
+		details:
+			"SaaS Completo: 4 planos de assinatura (Gratuito, Básico, Pro, Enterprise), Controle de limites por plano, Renovação automática mensal e Dashboard com métricas de uso. Sistema Administrativo: Gerenciamento de usuários (ativar/desativar), Estatísticas gerais do sistema, Visualização de todos os recursos e Controle de acessos (USER/ADMIN). Geração de Recursos: Upload de documentos (CNH, CRLV, Auto de Infração), OCR automático com Tesseract.js, Geração com Gemini 2.5 Flash, Geração de PDF profissional, Envio automático por email e Histórico completo. Interface Moderna: UI moderna com Tailwind CSS + shadcn/ui, Responsiva (mobile-first) e Performance otimizada.",
+	},
+			{
+		name: "HM Gráfica Visual",
+		slug: "hm-grafica-visual",
+		links: {
+			website: "https://hmgraficavisual.vercel.app/",
+		},
+		imageURL: "/hm.avif",
+		description:
+			"Landing page desenvolvida para a HM Gráfica Visual, uma empresa especializada em serviços de design, impressões e comunicação visual.",
+		tag: "Landing Page",
+		date: "2025",
+		techs: ["Astro", "Tailwind CSS", "TypeScript"],
+		details:
+			"Landing page institucional desenvolvida com Astro para garantir alta performance e otimização para motores de busca (SEO). O site apresenta o portfólio completo da empresa, destacando serviços de design gráfico, impressões digitais, adesivos e banners. A interface, construída com Tailwind CSS, oferece uma experiência de navegação fluida e um design limpo que valoriza a identidade visual da marca.",
+	},
 	{
 		name: "Lading Page de Psicologia",
 		slug: "lp-psicologia",
