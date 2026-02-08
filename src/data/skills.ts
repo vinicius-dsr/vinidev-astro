@@ -8,6 +8,7 @@ import {
 	FaPhp,
 	FaPython,
 	FaReact,
+	FaVuejs,
 	FaWordpress,
 } from "react-icons/fa";
 import {
@@ -16,6 +17,8 @@ import {
 	SiFramer,
 	SiNextdotjs,
 	SiPrisma,
+	SiMongodb,
+	SiPostgresql,
 	SiTailwindcss,
 	SiTypescript,
 } from "react-icons/si";
@@ -40,6 +43,10 @@ export const skills = [
 	{
 		icon: SiAstro,
 		name: "Astro",
+	},
+	{
+		icon: FaVuejs,
+		name: "VueJS"
 	},
 	{
 		icon: FaReact,
@@ -84,6 +91,14 @@ export const skills = [
 	{
 		icon: FaDatabase,
 		name: "MySQL",
+	},
+	{
+		icon: SiMongodb,
+		name: "MongoDB"
+	},
+	{
+		icon: SiPostgresql,
+		name: "Postgresql"
 	},
 	{
 		icon: SiFigma,
