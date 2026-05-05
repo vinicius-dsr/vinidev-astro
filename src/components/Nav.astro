@@ -4,7 +4,7 @@ const navLink = [
   { href: "/#servicos", name: "Serviços" },
   { href: "/#projetos", name: "Projetos" },
   { href: "/#contato", name: "Contato" },
-  { href: "/coffee", name: "Contribuir" },
+  /* { href: "/coffee", name: "Contribuir" }, */
 ];
 const { mode = "desktop" } = Astro.props;
 ---
@@ -31,7 +31,6 @@ const { mode = "desktop" } = Astro.props;
     navLinks.forEach((link) => {
       const href = link.getAttribute("href");
       if (!href) return;
-      // Considera apenas anchors de seção (ex: /#sobre) e ignora rotas de página (ex: /coffee)
       const hasHash = href.includes("#");
       if (!hasHash) return;
       const hash = "#" + href.split("#")[1];
