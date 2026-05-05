@@ -14,7 +14,7 @@ const { mode = "desktop" } = Astro.props;
     navLink.map((link) => (
       <a
         href={link.href}
-        class=" hover:text-primary transition-colors duration-200"
+        class=" hover:text-primary uppercase text-sm transition-colors duration-200"
         data-link
       >
         {link.name}
